@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Your Name</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- EmailJS SDK — powers the contact form -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-text">Loading</span>
+      <div class="loader-bar"><div class="loader-fill" id="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>mR<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero"         class="nav-link active">Home</a></li>
+      <li><a href="#about"        class="nav-link">About</a></li>
+      <li><a href="#education"    class="nav-link">Education</a></li>
+      <li><a href="#certificates" class="nav-link">Certificates</a></li>
+      <li><a href="#skills"       class="nav-link">Skills</a></li>
+      <li><a href="#projects"     class="nav-link">Projects</a></li>
+      <li><a href="#sports"       class="nav-link">Sports</a></li>
+      <li><a href="#contact"      class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-greeting anim-hero">Hello,World</p>
+      <h1 class="hero-name anim-hero">
+        <span class="name-line accent-text">Rohith M</span>
+      </h1>
+      <div class="hero-role anim-hero">
+        <span class="role-prefix">I am a </span>
+        <span class="typed-text" id="typed"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-tagline anim-hero">Crafting digital experiences with code, creativity &amp; curiosity.</p>
+      <div class="hero-cta anim-hero">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact"  class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-social anim-hero">
+        <a href="https://github.com/rohith077777" class="social-icon" title="GitHub"    target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/rohith-m-49a31a2a2" class="social-icon" title="LinkedIn"  target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/__rohith_07____?igsh=MWp4MzIxdHp3ZTNucg==" class="social-icon" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">01 — About</span>
+        <h2 class="section-title">Who I <span class="accent-text">Am</span></h2>
+      </div>
+      <div class="about-grid">
+
+        <!-- Left: photo + stats -->
+        <div class="about-image-wrap reveal-left">
+          <div class="about-img-frame">
+            <div class="about-img-placeholder">
+            <img src ="photo.jpeg" alt="profile photo" class="about-img">
+            </div>
+            <div class="img-deco-1"></div>
+            <div class="img-deco-2"></div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+              <p>Projects</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+              <p>Certifications</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-target="0">0</span><span class="stat-plus">+</span>
+              <p>Years Exp.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: text + info + resume button -->
+        <div class="about-text reveal-right">
+          <h3 class="about-subtitle">A passionate developer &amp; lifelong learner</h3>
+          <p class="about-para">Hi! I'm <strong>Rohith.M</strong>, a dedicated software developer with a passion for building beautiful, functional, and user-friendly applications. I love turning complex problems into simple, elegant solutions.</p>
+          <p class="about-para">When I'm not coding, you'll find me on the sports field, exploring new technologies, or working on creative side projects. I believe in continuous learning and pushing boundaries every single day.</p>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-calendar"></i> Age</span>
+              <span class="info-val">20 Years</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-map-marker-alt"></i> Location</span>
+              <span class="info-val">Chennai,India</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-envelope"></i> Email</span>
+              <span class="info-val">rohithmurugan08062006@email.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-phone"></i> Phone</span>
+              <span class="info-val">+91 9342159506</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-graduation-cap"></i> Degree/branch</span>
+              <span class="info-val">B.Tech - IT</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label"><i class="fas fa-briefcase"></i> Status</span>
+              <span class="info-val accent-text">Open to Work</span>
+            </div>
+          </div>
+
+          <!--
+            ╔══════════════════════════════════════════════════════════╗
+            ║  RESUME DOWNLOAD BUTTON                                  ║
+            ║  Place your resume PDF as  resume.pdf  in the same      ║
+            ║  folder as index.html.  The download attribute triggers  ║
+            ║  a browser download; the JS guard shows a toast if the  ║
+            ║  file is missing so you get a clear error message.      ║
+            ╚══════════════════════════════════════════════════════════╝
+          -->
+          <a href="resume.pdf"
+             download="rohith_Resume.pdf"
+             class="btn btn-primary mt-2"
+             id="resume-btn">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EDUCATION ═══════════════ -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">02 — Education</span>
+        <h2 class="section-title">My <span class="accent-text">Journey</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-icon"><i class="fas fa-university"></i></div>
+              <div>
+                <span class="tl-year">2023 – 2027</span>
+                <h3 class="tl-title">B.Tech / Infromation Technology</h3>
+              </div>
+            </div>
+            <p class="tl-institution"><i class="fas fa-building"></i> Anna University / Agni College Of Technology</p>
+            <p class="tl-desc">Specialized in infromation &amp; tech releted. Gained strong fundamentals in data structures, algorithms, web development, and software engineering practices.</p>
+            <span class="tl-badge">CGPA: 8.24 / 10</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-icon"><i class="fas fa-school"></i></div>
+              <div>
+                <span class="tl-year">2022 – 2023</span>
+                <h3 class="tl-title">Intermediate (12th Grade)</h3>
+              </div>
+            </div>
+            <p class="tl-institution"><i class="fas fa-building"></i>Montfort Matric Hr. Sec. School</p>
+            <p class="tl-desc">Completed intermediate education with MPC (Mathematics, Physics, Chemistry) stream with distinction.</p>
+            <span class="tl-badge">Score: 75%</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-icon"><i class="fas fa-school"></i></div>
+              <div>
+                <span class="tl-year">2020 – 2021</span>
+                <h3 class="tl-title">Secondary Education (10th Grade)</h3>
+              </div>
+            </div>
+            <p class="tl-institution"><i class="fas fa-building"></i>Montfort Matric Hr. Sec. School</p>
+            <p class="tl-desc">Completed secondary education with excellent academic performance and active participation in extracurriculars.</p>
+            <span class="tl-badge">score: 100%</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CERTIFICATES ═══════════════ -->
+  <!--
+    HOW TO ADD YOUR CERTIFICATE LINKS:
+    Replace the href="#" in each <a class="cert-link"> with your actual
+    certificate URL (e.g. Coursera, LinkedIn, Credly, etc.)
+    Example: href="https://www.coursera.org/verify/XXXXXXXXXX"
+    These open in a new tab so the visitor stays on your portfolio.
+  -->
+  <section class="section" id="certificates">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">03 — Certificates</span>
+        <h2 class="section-title">My <span class="accent-text">Credentials</span></h2>
+      </div>
+      <div class="cert-grid">
+
+        <div class="cert-card reveal-up" style="--delay:0.3s">
+          <div class="cert-ribbon">Verified</div>
+          <div class="cert-logo"><i class="fab fa-java"></i></div>
+          <h3 class="cert-name">Full stack development</h3>
+          <p class="cert-issuer">greatstack</p>
+          <p class="cert-date"><i class="fas fa-calendar-check"></i> Apr 2026</p>
+           <a href="certificate/greatstack.pdf" class="project-link" title="Live Demo" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+        <div class="cert-card reveal-up" style="--delay:0s">
+          <div class="cert-ribbon">Verified</div>
+          <div class="cert-logo"><i class="fab fa-aws"></i></div>
+          <h3 class="cert-name">Solutions architecture simulation</h3>
+          <p class="cert-issuer">Amazon Web Services</p>
+          <p class="cert-date"><i class="fas fa-calendar-check"></i> July 2025</p>
+           <a href="certificate/aws.pdf" class="project-link" title="Live Demo" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+
+        <div class="cert-card reveal-up" style="--delay:0.2s">
+          <div class="cert-ribbon">Verified</div>
+          <div class="cert-logo"><i class="fab fa-python"></i></div>
+          <h3 class="cert-name">Internship - Python Technology</h3>
+          <p class="cert-issuer">DLK technologies</p>
+          <p class="cert-date"><i class="fas fa-calendar-check"></i> Feb 2024</p>
+          <a href="certificate/DLK.pdf" class="project-link" title="Live Demo" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.3s">
+          <div class="cert-ribbon">Verified</div>
+          <div class="cert-logo"><i class="fab fa-google"></i></div>
+          <h3 class="cert-name">Network security</h3>
+          <p class="cert-issuer">great learning</p>
+          <p class="cert-date"><i class="fas fa-calendar-check"></i> Oct 2023</p>
+          <a href="certificate/greatlearning.pdf" class="project-link" title="Live Demo" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">04 — Skills</span>
+        <h2 class="section-title">What I <span class="accent-text">Know</span></h2>
+      </div>
+      <div class="skills-wrapper">
+
+        <div class="skills-col reveal-left">
+          <h3 class="skills-cat-title"><i class="fas fa-code"></i> Technical Skills</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>HTML &amp; CSS</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>JavaScript</span><span>50%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>React.js</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Python</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>SQL / MySQL</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="skills-col reveal-right">
+          <h3 class="skills-cat-title"><i class="fas fa-tools"></i> Tools &amp; Technologies</h3>
+          <div class="tech-tags">
+            <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="tech-tag"><i class="fab fa-github"></i> GitHub</span>
+            <span class="tech-tag"><i class="fab fa-figma"></i> Figma</span>
+            <span class="tech-tag"><i class="fab fa-canadian-maple-leaf"></i> canva</span>
+            <span class="tech-tag"><i class="fas fa-table"></i> Msqlworkbech</span>
+            <span class="tech-tag"><i class="fas fa-brain"></i> clade</span>
+            <span class="tech-tag"><i class="fas fa-terminal"></i> VS Code</span>
+          </div>
+
+          <h3 class="skills-cat-title skill-gap"><i class="fas fa-brain"></i> Soft Skills</h3>
+          <div class="soft-skills">
+            <div class="soft-skill"><i class="fas fa-lightbulb"></i> Problem Solving</div>
+            <div class="soft-skill"><i class="fas fa-users"></i> Team Collaboration</div>
+            <div class="soft-skill"><i class="fas fa-comments"></i> Communication</div>
+            <div class="soft-skill"><i class="fas fa-clock"></i> Time Management</div>
+            <div class="soft-skill"><i class="fas fa-sync"></i> Adaptability</div>
+            <div class="soft-skill"><i class="fas fa-star"></i> Leadership</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">05 — Projects</span>
+        <h2 class="section-title">What I've <span class="accent-text">Built</span></h2>
+      </div>
+
+      <div class="filter-tabs reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="sql">sql</button>
+        <button class="filter-btn" data-filter="designs">designs</button>
+        </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal-up" data-cat="web" style="--delay:0.1s">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="background:var(--grad-2)"><i class="fas fa-globe"></i></div>
+            <div class="project-overlay">
+              <a href="https://rohith077777.github.io/MED-REMAINDER/" class="project-link" title="Live Demo" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/rohith077777/MED-REMAINDER" class="project-link" title="GitHub"    target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <h3 class="project-title">Med Remainder App</h3>
+            <p class="project-desc">I Built a responsive medication reminder web app for elderly users to track tablet schedules and dosage timings.</p>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up" data-cat="sql" style="--delay:0.2s">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="background:var(--grad-3)"><i class="fas fa-database"></i></div>
+            <div class="project-overlay">
+              <a href="https://github.com/rohith077777/Flight-Delay-Tracker-System" class="project-link" title="Live Demo" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/rohith077777/Flight-Delay-Tracker-System" class="project-link" title="GitHub"    target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>sql</span><span>mysqlworkbench</span><span>XAMMP</span></div>
+            <h3 class="project-title">Flight delay tracker - SQL </h3>
+            <p class="project-desc"> Designed and implemented a relational database system in MySQL Workbench to track and analyze flight delay patterns across multiple airlines and airports.</p>
+          </div>
+        </div>
+
+
+              <div class="project-card reveal-up" data-cat="designs" style="--delay:0.2s">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="background:var(--grad-3)"><i class="fas fa-palette"></i></div>
+            <div class="project-overlay">
+            <a href="my designs.pdf" class="project-link" title="Live Demo" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>canva</span><span>photoshop</span><span>figma</span></div>
+            <h3 class="project-title">Poster desgins </h3>
+            <p class="project-desc">Designed creative posters for college-level and department events using Canva, showcasing design creativity, visual communication, and event branding skills.</p>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ SPORTS ═══════════════ -->
+  <section class="section section-alt" id="sports">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">06 — Sports</span>
+        <h2 class="section-title">Beyond <span class="accent-text">Code</span></h2>
+      </div>
+      <p class="sports-intro reveal-up">Sports have shaped my discipline, teamwork, and resilience — values I carry into every project I build.</p>
+      <div class="sports-grid">
+
+        <div class="sport-card reveal-up" style="--delay:0s">
+          <div class="sport-icon"><i class="fas fa-baseball-bat-ball"></i></div>
+          <h3 class="sport-name">Cricket</h3>
+          <p class="sport-role">Average player</p>
+          <p class="sport-desc">Participated tornment matches and play for physical activities</p>
+        </div>
+
+        <div class="sport-card reveal-up" style="--delay:0.1s">
+          <div class="sport-icon"><i class="fas fa-futbol"></i></div>
+          <h3 class="sport-name">Football</h3>
+          <p class="sport-role">GOAL KEEPAR</p>
+          <p class="sport-desc">Active player in school level football games. Participated in zonal level matches also.</p>
+          <div class="sport-badges"><span>Zonal Level</span></div>
+        </div>
+
+        <div class="sport-card reveal-up" style="--delay:0.2s">
+          <div class="sport-icon"><i class="fas fa-table-tennis-paddle-ball"></i></div>
+          <h3 class="sport-name">Batmition</h3>
+          <p class="sport-role">Singles Player</p>
+          <p class="sport-desc">participated in intra-college championships. Regularly practices to improve speed and accuracy.</p>
+          <div class="sport-badges"><span>runner up</span></div>
+        </div>
+
+        <div class="sport-card reveal-up" style="--delay:0.4s">
+          <div class="sport-icon"><i class="fas fa-chess"></i></div>
+          <h3 class="sport-name">Chess</h3>
+          <p class="sport-role">Strategic Player</p>
+          <p class="sport-desc">Participates in college chess-club tournaments regularly.</p>
+          <div class="sport-badges"><span>average level</span><span>medals</span></div>
+        </div>
+
+         <div class="sport-card reveal-up" style="--delay:0.4s">
+          <div class="sport-icon"><i class="fas fa-ring"></i></div>
+          <h3 class="sport-name">Tennikoit</h3>
+          <p class="sport-role">focusfull player</p>
+          <p class="sport-desc">Participates in school level and zonal level tournaments.</p>
+          <div class="sport-badges"><span>2+ year experience</span><span>won medals</span></div>
+        </div>
+
+        <div class="sport-card reveal-up" style="--delay:0.5s">
+          <div class="sport-icon"><i class="fas fa-dumbbell"></i></div>
+          <h3 class="sport-name">Fitness &amp; Gym</h3>
+          <p class="sport-role">Consistent Athlete</p>
+          <p class="sport-desc">Committed to daily fitness routines. Certified in basic strength training and nutrition fundamentals.</p>
+          <div class="sport-badges"><span>2 Years Consistent</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  EMAIL SETUP (EmailJS — free, no backend required)          ║
+    ║                                                             ║
+    ║  1. Go to https://www.emailjs.com  and create a free acct  ║
+    ║  2. Add an Email Service (Gmail / Outlook etc.)            ║
+    ║  3. Create an Email Template — use these variables:        ║
+    ║       {{from_name}}  {{from_email}}                        ║
+    ║       {{subject}}    {{message}}                           ║
+    ║  4. In script.js find the EMAILJS CONFIG block and fill:   ║
+    ║       YOUR_PUBLIC_KEY   → Account → API Keys               ║
+    ║       YOUR_SERVICE_ID   → Email Services → Service ID      ║
+    ║       YOUR_TEMPLATE_ID  → Email Templates → Template ID    ║
+    ║  5. Change the TO_EMAIL below to your real inbox address   ║
+    ╚══════════════════════════════════════════════════════════════╝
+  -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">07 — Contact</span>
+        <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
+      </div>
+      <div class="contact-wrapper">
+
+        <!-- Info side -->
+        <div class="contact-info reveal-left">
+          <p class="contact-intro">I'm always open to discussing new projects, creative ideas, or opportunities. Let's build something amazing together!</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <a href="mailto:your@email.com" class="contact-item-val">rohithmurugan08062006@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <p class="contact-item-label">Phone</p>
+                <a href="tel:+910000000000" class="contact-item-val">+91 9342159506</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <p class="contact-item-label">Location</p>
+                <span class="contact-item-val">Chennai,India</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-briefcase"></i></div>
+              <div>
+                <p class="contact-item-label">Availability</p>
+                <span class="contact-item-val accent-text">Open to Opportunities</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/rohith077777" class="csocial-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/rohith-m-49a31a2a2" class="csocial-btn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://www.instagram.com/__rohith_07____?igsh=MWp4MzIxdHp3ZTNucg==" class="csocial-btn" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><span class="logo-bracket">&lt;</span>mR<span class="logo-bracket">/&gt;</span></p>
+      <p class="footer-copy">Designed & Developed by <span class="accent-text">Rohith M</span> &copy; <span id="year">2026</span></p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
